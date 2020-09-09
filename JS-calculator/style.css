@@ -1,0 +1,41 @@
+.calc {
+    border: 1px solid grey;
+	position: relative;
+	display: inline-block;
+	vertical-align: middle;
+	width: 225px;
+    height: 400px;
+    margin: 5px;
+    padding: 5px;
+    overflow: hidden;
+    background-color: black;
+    color: grey;
+}
+
+.screan {
+    border: 1px solid grey;
+	position: relative;
+	display: inline-block;
+	width: 210px;
+    height: 40px;
+    margin: 5px;
+    overflow: hidden;
+}
+
+.btn {
+    border: 1px solid grey;
+	position: relative;
+	display: inline-block;
+	width: 40px;
+    height: 40px;
+    margin: 5px;
+    overflow: hidden;
+    background-color: black;
+    color: gray;
+    text-align: center;
+    cursor: pointer;
+}
+
+.btn.down {
+    background-color: grey!important;
+}
