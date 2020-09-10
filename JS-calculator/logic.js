@@ -8,7 +8,7 @@ function strToFloat(str) {
 
 function step4(str) {
 	console.log("step4");
-	var i1 = str.indexOf('-');
+	var i1 = str.indexOf('-', 1);
 	var i2 = str.indexOf('+');/*
 	console.log("- at " + i1);
 	console.log("+ at " + i2);*/
@@ -27,7 +27,7 @@ function step4(str) {
 			var temp = str.slice(0, i1) - str.slice(i1+1, end);
 			temp += str.slice(end);
 			str = temp;
-			i1 = str.indexOf('-');
+			i1 = str.indexOf('-', 1);
 			i2 = str.indexOf('+');
 		} else {
 			//+
@@ -41,7 +41,7 @@ function step4(str) {
 			var temp = parseFloat(str.slice(0, i2)) + parseFloat(str.slice(i2+1, end));
 			temp += str.slice(end);
 			str = temp;
-			i1 = str.indexOf('-');
+			i1 = str.indexOf('-', 1);
 			i2 = str.indexOf('+');
 		}
 		console.log('on 4 "' + str + '"');
@@ -58,7 +58,7 @@ function step4(str) {
 		console.log('temp on 4 "' + temp + '"');
 		temp += str.slice(end);
 		str = String(temp);
-		i1 = str.indexOf('-');
+		i1 = str.indexOf('-', 1);
 		console.log('on 4 "' + str + '"');
 	}
 	while (i2 != -1) {
