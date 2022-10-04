@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <style type="text/css">
+    @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+
+    body {
+        background-image: url(https://lumeus.github.io/TS-BST/logo.png);
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+        background-position: center;
+        margin: 0px;
+        padding: 0px;
+        font-family: 'JetBrains Mono', monospace;
+        color: grey
+    }
+
+    input {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        font-size: xxx-large;
+    }
+  </style>
+  <script type="text/javascript">
+    function readFile(input) {
+      let file = input.files[0];
+
+      if (file.name.endsWith('.json')) {
+        let reader = new FileReader();
+
+        reader.readAsText(file);
+
+        reader.onload = function() {
+          let json = JSON.parse(reader.result);
+          let csv = "Name,Given Name,Additional Name,Family Name,Yomi Name,Given Name Yomi,Additional Name Yomi,Family Name Yomi,Name Prefix,Name Suffix,Initials,Nickname,Short Name,Maiden Name,Birthday,Gender,Location,Billing Information,Directory Server,Mileage,Occupation,Hobby,Sensitivity,Priority,Subject,Notes,Language,Photo,Group Membership,Phone 1 - Type,Phone 1 - Value,Organization 1 - Type,Organization 1 - Name,Organization 1 - Yomi Name,Organization 1 - Title,Organization 1 - Department,Organization 1 - Symbol,Organization 1 - Location,Organization 1 - Job Description\n"
+          for (let contact of json.contacts.list) {
+            csv += contact.first_name + ' ' + contact.last_name + ",,,,,,,,,,,,,,,,,,,,,,,,,,,,* myContacts,Mobile," + contact.phone_number + ",,,,,,,,\n"
+          }
+          let result = new File([csv], "contacts.csv")
+          const link = document.createElement('a')
+          link.setAttribute('href', URL.createObjectURL(result))
+          link.setAttribute('download', result.name)
+          URL.revokeObjectURL(file)
+          link.click()
+        };
+
+        reader.onerror = function() {
+          console.log(reader.error);
+        };
+      } else {
+        alert("Неверный тип файла, выберете, пожалуйста файл json")
+      }
+
+    }
+  </script>
+</head>
+<body>
+  <input type="file" onchange="readFile(this)">
+</body>
