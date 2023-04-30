@@ -24,19 +24,7 @@ function createListeners() {
 			.setAttribute('content', 'width=device-width, initial-scale=1');
 		}
 	}
-	arr = document.getElementsByClassName("block");
-	for (i = 0; i < arr.length; i++) {
-		arr[i].innerHTML = '<img class="up" src="images/flowers.png"><div class="content">' + arr[i].innerHTML + '</div>'
-	}
 	countdown();
-	setTimeout(() => {
-		arr2 = document.getElementsByClassName("content");
-		for (i = 0; i < arr.length; i++) {
-			arr[i].innerHTML += '<div class="back" style="margin: -' + (arr2[i].clientHeight) + 
-			'px 55px -333px; height: ' + (arr2[i].clientHeight - 200) + 
-			'px"></div><img class="down" src="images/flowers.png" style="rotate: 180deg;">'
-		}
-	}, 15)
 
 	// 2gis maps
 	var map;
