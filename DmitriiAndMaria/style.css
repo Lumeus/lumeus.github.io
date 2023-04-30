@@ -1,0 +1,83 @@
+@font-face {
+    font-family: 'Nexa Script';
+    src: url('fonts/NexaScript-Light.eot');
+    src: url('fonts/NexaScript-Light.eot?#iefix') format('embedded-opentype'),
+        url('fonts/NexaScript-Light.woff2') format('woff2'),
+        url('fonts/NexaScript-Light.woff') format('woff'),
+        url('fonts/NexaScript-Light.ttf') format('truetype'),
+        url('fonts/NexaScript-Light.svg#NexaScript-Light') format('svg');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+body {
+    font-family: 'Nexa Script';
+    font-weight: 300;
+    font-style: normal;
+    font-size: 20pt;
+    color: #4d1517;
+    background-image: url(images/bg.jpg);
+    background-repeat: repeat;
+    background-attachment: fixed;
+    background-size: 100px;
+}
+li {
+    margin: 10px auto 10px;
+}
+h2 {
+    margin-top: 0;
+}
+.block {
+    position: relative;
+    width: 510px;
+    height: fit-content;
+    margin: 0 auto;
+}
+.back {
+    z-index: 5;
+    position: relative;
+    border-radius: 100px;
+    background-color: white;
+    width: 300px;
+    padding: 100px 50px 100px;
+    text-align: center;
+}
+.content {
+    z-index: 20;
+    position: relative;
+    width: 300px;
+    height: fit-content;
+    margin: -333px 55px 0px;
+    padding: 100px 50px 100px;
+    text-align: center;
+}
+.plan {
+    display: inline-flex;
+    margin: 10px 0;
+}
+.plan img {
+    width: 100px;
+    height: 100px;
+}
+.plan div {
+    width: 200px;
+    height: 100px;
+}
+.flowers {
+    position: relative;
+    z-index: 10;
+    margin: 0 auto 0;
+    padding: 0;
+}
+.up {
+    position: relative;
+    z-index: 10;
+    margin: 0;
+    padding: 0;
+}
+.down {
+    position: relative;
+    z-index: 10;
+    margin: 0;
+    padding: 0;
+}
